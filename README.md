@@ -51,3 +51,5 @@ Dylan releases automatically. For example, the "v3" tag always points to the lat
 release with major version 3, e.g., `v3 -> v3.2.1`.  The major version of
 `install-opendylan` only changes when the Action itself is changed incompatibly, as with
 normal SemVer semantics.
+
+`v3` is currently the only moving tag.
