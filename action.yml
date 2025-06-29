@@ -27,13 +27,13 @@ runs:
         tar xfj opendylan.tar.bz2
         ln -s opendylan-${od_version} opendylan
         ln -s opendylan-${od_version}/bin/dylan-compiler
-        ln -s opendylan-${od_version}/bin/dylan
+        ln -s opendylan-${od_version}/bin/dylan # backward compatibility
+        ln -s opendylan-${od_version}/bin/deft
         echo "Compiler: ${PWD}/dylan-compiler"
-        echo "deft: ${PWD}/dylan"
         echo -n "Open Dylan "
         ./dylan-compiler -version
-        echo -n "dylan version: "
-        ./dylan version
+        echo -n "Deft version: "
+        ./deft version
         # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-system-path
         # Eventually we can add opendylan/bin to the path instead of creating
         # links in the current directory, but for now there are too many
