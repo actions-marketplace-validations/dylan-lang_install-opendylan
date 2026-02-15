@@ -4,7 +4,7 @@ inputs:
   tag:
     required: false
     type: string
-    default: v2025.1.0
+    default: v2026.1.0
 
 runs:
   using: composite
@@ -32,7 +32,7 @@ runs:
         echo "Compiler: ${PWD}/dylan-compiler"
         echo -n "Open Dylan "
         ./dylan-compiler -version
-        echo -n "Deft version: "
+        echo -n "Deft "
         ./deft version
         # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#adding-a-system-path
         # Eventually we can add opendylan/bin to the path instead of creating
