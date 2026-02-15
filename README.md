@@ -3,7 +3,7 @@
 # install-opendylan
 
 A GitHub Action to install the Open Dylan compiler (`dylan-compiler`) and
-`dylan` tool.
+Deft, a workspace and package management CLI.
 
 To install the latest Open Dylan release on Linux or macOS (Windows not yet
 supported):
@@ -17,28 +17,28 @@ To install a specific released version:
 ```yaml
     - uses: dylan-lang/install-opendylan@v3
       with:
-        tag: v2020.1.0
+        tag: v2025.1.0
 ```
 
 `tag` is the exact tag identifying the GitHub release, including the leading
 "v".
 
 **Important:** This Action must be used **after**
-[actions/checkout@vN](https://github.com/actions/checkout) when using the
-default `path:` (i.e., the current directory) because `actions/checkout@v2`
+[actions/checkout](https://github.com/actions/checkout) when using the
+default `path:` (i.e., the current directory) because `actions/checkout`
 deletes everything in the repo directory first.
 
-When this Action has completed the following artifacts exist:
+When this Action has completed,
 
-1.  A directory containing the `dylan-compiler` and `dylan` executable binaries
-    has been added to the `PATH`.
+1.  `dylan-compiler`, `deft`, and any other executable binaries distributed with the
+    specified Open Dylan release are available on the `PATH`.
 
-3.  `${GITHUB_WORKSPACE}/../opendylan` is a symbolic link pointing to the Open
+2.  `${GITHUB_WORKSPACE}/../opendylan` is a symbolic link pointing to the Open
     Dylan installation directory.
 
 **Note:** Files are installed outside of `${GITHUB_WORKSPACE}` so that they
 won't be deleted by the "checkout" GitHub action and so that they aren't
-included by the `dylan update` command when generating registry files.
+found by the `deft update` command when generating registry files.
 
 See the [hello](https://github.com/cgay/hello) repository for the canonical
 example of how to use this Action.
